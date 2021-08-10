@@ -1,3 +1,3 @@
-module ova-sport-api
+module ova-sport
 
 go 1.16
