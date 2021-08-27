@@ -3,13 +3,18 @@ package utils
 import "errors"
 
 func DivideSliceToSlices(slice []int, chunkSize int) ([][]int, error){
+	if slice == nil {
+		return nil, nil
+	}
+
 	if chunkSize < 1 {
 		return nil, errors.New("chunk size can't be less 1")
 	}
 
 	if len(slice) <= 0 {
-		return nil, errors.New("slice length can't ")
+		return nil, errors.New("slice length can't be 0")
 	}
+
 	result := make([][]int, 0, len(slice) / chunkSize + 1)
 
 	for chunkSize < len(slice) {
